@@ -1,0 +1,104 @@
+title: About
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: hero_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Hero Image'
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: panels
+            field:
+              type: replicator
+              display: Panels
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: panel_header
+                          field:
+                            type: text
+                            display: 'Panel Header'
+                        -
+                          handle: panel_content
+                          field:
+                            type: markdown
+                            display: 'Panel Content'
+          -
+            handle: testimonials
+            field:
+              type: replicator
+              display: Testimonials
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: title
+                          field:
+                            type: text
+                            display: Title
+                        -
+                          handle: comment
+                          field:
+                            type: textarea
+                            display: Comment
+                        -
+                          handle: customer_name
+                          field:
+                            type: text
+                            display: 'Customer Name'
+                        -
+                          handle: customer_title
+                          field:
+                            type: text
+                            display: 'Customer Title'
+                        -
+                          handle: customer_avatar
+                          field:
+                            max_files: 1
+                            container: assets
+                            type: assets
+                            display: 'Customer Avatar'
+      -
+        display: 'New Section'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true

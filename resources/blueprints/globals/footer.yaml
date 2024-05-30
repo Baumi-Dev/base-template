@@ -1,0 +1,26 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: about
+            field:
+              type: link
+              display: About
+          -
+            handle: privacy_policy
+            field:
+              type: link
+              display: 'Privacy Policy'
+          -
+            handle: licensing
+            field:
+              type: link
+              display: Licensing
+          -
+            handle: contact
+            field:
+              type: link
+              display: Contact

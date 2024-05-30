@@ -1,0 +1,9 @@
+{
+    "name": "my-vendor-name/visual1-base-template",
+    "extra": {
+        "statamic": {
+            "name": "Visual1 Base Template",
+            "description": "Visual1 Base Template starter kit"
+        }
+    }
+}

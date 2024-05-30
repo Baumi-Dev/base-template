@@ -1,0 +1,42 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Details
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+          -
+            handle: email
+            field:
+              type: text
+              display: Email
+          -
+            handle: phone
+            field:
+              type: text
+              display: Phone
+          -
+            handle: logo
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Logo
+      -
+        display: Socials
+        fields:
+          -
+            handle: facebook
+            field:
+              type: link
+              display: Facebook
+          -
+            handle: instagram
+            field:
+              type: link
+              display: Instagram

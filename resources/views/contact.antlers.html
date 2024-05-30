@@ -1,0 +1,89 @@
+<section class="max-w-6xl mx-auto px-4 dark:bg-gray-900">
+    <header class="my-12 md:my-16 lg-my-24 text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl text-gray-400 font-bold">
+            {{ title }}
+        </h1>
+    </header>
+    {{ form:contact }}
+    <div class="flex justify-center items-center mt-12">
+        <div class="mb-6 w-full md:w-1/2">
+            {{ if success }}
+            <div
+                class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+                role="alert"
+            >
+                <span class="font-medium">Thanks!</span> Someone will be in
+                touch soon.
+            </div>
+            {{ /if }} {{ if errors }}
+            <div
+                class="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300"
+                role="alert"
+            >
+                <span class="font-medium">There are errors!</span> Please fix
+                these below:
+                <ul class="max-w-md space-y-1 list-disc list-inside mt-2">
+                    {{ errors }}
+                    <li>{{ value }}</li>
+                    {{ /errors }}
+                </ul>
+            </div>
+            {{ /if }}
+
+            <div class="mb-6">
+                <label
+                    for="name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Your Name</label
+                >
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Name"
+                    value="{{ old:name }}"
+                />
+            </div>
+            <div class="mb-6">
+                <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Your email</label
+                >
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Email Address"
+                    value="{{ old:email }}"
+                />
+            </div>
+            <div class="mb-6">
+                <label
+                    for="note"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                    Your message
+                </label>
+                <textarea
+                    id="note"
+                    rows="4"
+                    name="note"
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Your message..."
+                >
+{{ old:note }}</textarea
+                >
+                <input type="text" name="honeypot" class="hidden" />
+            </div>
+            <button
+                class="text-white bg-blue-500 hover:bg-blue-800 w-full focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block"
+            >
+                Send message
+            </button>
+        </div>
+    </div>
+    {{ /form:contact }}
+</section>

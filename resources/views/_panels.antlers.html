@@ -1,0 +1,25 @@
+{{ panels }}
+<section class="mt-12 bg-white dark:bg-gray-900 max-w-7xl mx-auto">
+    {{ if index % 2 }}
+    <div
+        class="flex flex-col items-center bg-white dark:bg-gray-900 md:flex-row w-full relative">
+        <div class="flex flex-col justify-between p-4 leading-normal md:w-1/2 text-gray-900 dark:text-white prose">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight">{{ panel_header }}</h5>
+            <p class="font-normal text-gray-700 dark:text-white prose">{{ panel_content }}</p>
+        </div>
+        <img class="object-cover md:w-1/2 rounded-t-lg h-96 md:h-auto md:rounded-none md:rounded-r-lg"
+             src="{{ panel_image }}" alt="">
+    </div>
+    {{ else }}
+    <div
+        class="flex flex-col items-center bg-white dark:bg-gray-900 md:flex-row w-full relative">
+        <img class="object-cover md:w-1/2 rounded-t-lg h-96 md:h-auto md:rounded-none md:rounded-s-lg"
+             src="{{ panel_image }}" alt="">
+        <div class="flex flex-col justify-between p-4 leading-normal text-gray-900 dark:text-white md:w-1/2 prose">
+            <h5 class="text-2xl font-bold tracking-tight">{{ panel_header }}</h5>
+            <p class="font-normal text-gray-700 dark:text-white">{{ panel_content }}</p>
+        </div>
+    </div>
+    {{ /if }}
+</section>
+{{ /panels }}
